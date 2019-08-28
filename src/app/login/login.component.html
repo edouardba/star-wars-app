@@ -1,0 +1,29 @@
+<div class="background-container">
+    <div class="content-container">
+        <div class="form-container">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <p class="baseline">May the force be with you</p>
+                <mat-form-field>
+                    <input matInput type="email" placeholder="Email" formControlName="email" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                </mat-form-field><br />
+                <mat-form-field>
+                    <input matInput type="password" placeholder="Password"
+                        formControlName="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </mat-form-field><br />
+                <div>
+                    <button class="login-button"
+                        mat-raised-button><span>Login</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

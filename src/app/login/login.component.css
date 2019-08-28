@@ -1,0 +1,65 @@
+/********************* GENEREAL ******************************/
+
+*{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/********************* FORM STYLE ****************************/
+
+.content-container {
+    padding: 10%;
+    text-align: center;
+}
+
+.form-container {
+    display: inline-block;
+    padding: 40px 30px 20px 30px;
+    background-color: white;
+    border-radius: 2%;
+}
+
+.background-container {
+    height: 100%;
+    width: 100%;
+    background-image: url(./img/background-login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.baseline {
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.mat-form-field {
+    width: 200px;
+}
+
+/********************* BUTTONS STYLE *************************/
+
+.mat-raised-button{
+    color: white;
+}
+
+.login-button{
+    background-color: #000000;
+    margin: 20px;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.login-button:hover {
+    color: #000000;
+    background-color: #F9D71C;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.login-button span {
+    cursor: pointer;
+    font-size: 15px;
+}

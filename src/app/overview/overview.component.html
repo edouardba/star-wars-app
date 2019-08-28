@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 class="title">Star Wars Ressources</h1>
+    <div class="searchFilter">
+        <div class="search">
+            <mat-form-field style="width: 80%">
+                <input matInput (keyup)="onSearch($event)"
+                    placeholder="Search a Films, People, Planets... and please enter">
+            </mat-form-field>
+        </div>
+        <span class="toolbar-spacer"></span>
+        <div class="filter">
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <mat-select [(ngModel)]="selectedRessource">
+                    <mat-option *ngFor="let ressource of ressources | keyvalue" [value]="ressource.key">
+                        {{ressource.key | titlecase}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="list-container">
+        <div class="list">
+            <mat-list *ngFor="let item of resultSearch.results | paginate: { itemsPerPage: 5, currentPage: p }">
+                <div *ngIf="selectedRessource == 'films'; else otherRessource">
+                    <mat-list-item class="click-item" (click)="showDetails(item.url)"
+                        (click)="panelExpanded = !panelExpanded">
+                        {{ item.title }}
+                    </mat-list-item>
+                </div>
+                <ng-template #otherRessource>
+                    <mat-list-item class="click-item" (click)="showDetails(item.url)"
+                        (click)="panelExpanded = !panelExpanded">
+                        {{ item.name }}
+                    </mat-list-item>
+                </ng-template>
+            </mat-list>
+        </div>
+        <div class="list-details">
+            <mat-list *ngIf="panelExpanded">
+                <mat-list-item *ngFor="let item of objectKeys(resultDetail)">
+                    {{ item }}:{{resultDetail[item]}}
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+    <pagination-controls class="paginator" (pageChange)="p = $event"></pagination-controls>
+</div>

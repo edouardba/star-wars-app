@@ -1,0 +1,7 @@
+{
+    "/umbraco/Api": {
+        "target": "https://swapi.co/api/",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

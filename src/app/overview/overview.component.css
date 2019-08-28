@@ -1,0 +1,62 @@
+/********************* GENERAL ********************/
+
+.container {
+    margin: 20px 20px 20px 20px;
+}
+
+/********************* TITLE ********************/
+
+.grid-title > ::ng-deep figure {
+    justify-content: flex-start !important;
+}
+
+.title {
+    color: #1c254c;
+}
+
+/********************* FILTER ********************/
+
+.grid-filter > ::ng-deep figure {
+    justify-content: flex-start !important;
+}
+
+.search {
+    width: 80%;
+}
+
+.searchFilter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/********************* LIST ***********************/
+
+.list-container {
+    display: flex;
+}
+
+.list {
+    display:flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.list-details {
+    display:flex;
+    width: 40%;
+}
+
+/********************* DETAILS ********************/
+
+.click-item {
+    cursor: pointer;
+}
+
+/********************* PAGINATOR ********************/
+
+.paginator {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
